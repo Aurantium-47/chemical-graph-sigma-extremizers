@@ -1,0 +1,336 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Z}{\mathbb Z}
+\title{Extremal degree multiplicities for modified total\newline
+irregularity of chemical graphs}
+\author{}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a connected simple graph on $n$ vertices with maximum degree at most
+four, consider the sum of $|d(u)-d(v)|^{1/n}$ over all unordered pairs of
+distinct vertices. We determine every degree-multiplicity vector attaining
+the maximum, for every $n\geq7$. This proves the classification proposed in
+Conjecture~10 of Knor, \v Skrekovski, Filipovski and Dimitrov. The proof first
+optimizes over integer multiplicities satisfying the handshaking parity
+condition. A positive quadratic decomposition reduces the problem to two
+nearest-integer comparisons. We then show that every maximizing vector has
+a connected simple realization. The argument applies to all $n\geq7$ and
+does not depend on finite enumeration.
+\end{abstract}
+
+\section{Statement and relation to previous work}
+
+A \emph{chemical graph} here means a finite, undirected, connected simple
+graph of maximum degree at most four, as in~\cite{knor}. For such a graph
+$G$ of order $n\geq7$, define
+\begin{equation}\label{eq:index}
+ I_n(G)=\sum_{\{u,v\}\in\binom{V(G)}{2}}|d(u)-d(v)|^{1/n}.
+\end{equation}
+The sum is over all unordered pairs of distinct vertices, not only edges.
+Write $a_i=|\{v\in V(G):d(v)=i\}|$ for $1\leq i\leq4$.
+
+In arXiv:2411.01530v1, Knor et al.~\cite[Theorem~9 and Conjecture~10]{knor}
+proved a classification
+for a smaller, order-dependent range of positive exponents, and conjectured
+that the same classification holds for exponent $1/n$.
+Dimitrov et al.~\cite[Theorem~2.2]{dimitrov} subsequently reported the
+$n\equiv0\pmod4$ case, within a more general parameter statement.
+We give a self-contained proof for all four residue classes; no result
+about the more general exponent $c/n$ is used below.
+The constant-exponent Conjecture~11 of~\cite{knor} is a different question.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\geq7$, a chemical graph of order $n$ maximizes
+\eqref{eq:index} if and only if its degree-multiplicity vector occurs in
+Table~\ref{tab:winners}. Each listed vector has a connected simple
+realization.
+\begin{table}[ht]
+\centering
+\begin{tabular}{cl}
+\toprule
+Order & $(a_1,a_2,a_3,a_4)$\\
+\midrule
+$4k$ & $(k,k,k,k)$\\
+$4k+1$ & $(k,k,k,k+1)$\\
+$4k+2$ & $(k,k+1,k,k+1)$ or $(k+1,k,k+1,k)$\\
+$4k+3$ & $(k+1,k,k+1,k+1)$\\
+\bottomrule
+\end{tabular}
+\caption{All maximizing degree multiplicities, with $n\geq7$.}
+\label{tab:winners}
+\end{table}
+\end{theorem}
+
+The last row is the vector $(K,K-1,K,K)$ when $n=4K-1$, as written
+in~\cite{knor}. The classification concerns degree multiplicities, not
+isomorphism types. Any two graphs with the same multiplicities have the
+same value of~\eqref{eq:index}.
+
+\section{Optimization over integer multiplicities}
+
+Every chemical graph gives a vector in the larger set
+\[
+ \mathcal A_n=\left\{a\in\Z_{\geq0}^4:
+ \sum_{i=1}^4a_i=n,\quad a_1+a_3\equiv0\pmod2\right\}.
+\]
+The parity condition follows from the handshaking lemma. We first maximize
+over $\mathcal A_n$ without requiring graphicality. Put
+\[
+ p=\frac1n,\qquad T=2^p,\qquad S=3^p,\qquad D=1+2T-S.
+\]
+Counting pairs by their degrees gives
+\begin{equation}\label{eq:Q}
+ Q(a)=a_1a_2+a_2a_3+a_3a_4+T(a_1a_3+a_2a_4)+Sa_1a_4.
+\end{equation}
+For every graph with multiplicities $a$, its index equals $Q(a)$.
+
+Set $s=a_1+a_4$, $u=a_1-a_4$, and $v=a_2-a_3$. The inverse change of
+variables is
+\begin{equation}\label{eq:inverse}
+ a_1=\frac{s+u}{2},\quad a_4=\frac{s-u}{2},\quad
+ a_2=\frac{n-s+v}{2},\quad a_3=\frac{n-s-v}{2}.
+\end{equation}
+Expansion of~\eqref{eq:Q} yields
+\begin{align}
+ 4Q(a)&=n^2+2nTs-Ds^2-E(u,v),\label{eq:decomposition}\\
+ E(u,v)&=Su^2+v^2+2(T-1)uv\nonumber\\
+ &=(S-T+1)u^2+(2-T)v^2+(T-1)(u+v)^2.\label{eq:positive}
+\end{align}
+All three coefficients in~\eqref{eq:positive} are strictly positive:
+$1<T<2$ and $S>T$. The integer and parity conditions become
+\begin{equation}\label{eq:congruences}
+ u\equiv s\pmod2,\qquad v\equiv n-s\pmod2,\qquad
+ u-v\equiv-n\pmod4.
+\end{equation}
+Nonnegativity additionally requires $0\leq s\leq n$, $|u|\leq s$,
+and $|v|\leq n-s$.
+
+\subsection{The parity penalty}
+
+The congruences give the bounds and equality conditions in
+Table~\ref{tab:penalty}. These are uniform lower bounds; at an arbitrary
+boundary value of $s$, their equality conditions need not be feasible.
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+ & \multicolumn{2}{c}{$s$ even} & \multicolumn{2}{c}{$s$ odd}\\
+$n\bmod4$ & Bound on $E$ & Equality $(u,v)$ & Bound on $E$ & Equality $(u,v)$\\
+\midrule
+0 & $0$ & $(0,0)$ & $S+2T-1$ & $(1,1),\ (-1,-1)$\\
+1 & $1$ & $(0,1)$ & $S$ & $(-1,0)$\\
+2 & $4$ & $(0,2),\ (0,-2)$ & $S+3-2T$ & $(1,-1),\ (-1,1)$\\
+3 & $1$ & $(0,-1)$ & $S$ & $(1,0)$\\
+\bottomrule
+\end{tabular}
+\caption{Lower bounds for $E(u,v)$ under~\eqref{eq:congruences}.}
+\label{tab:penalty}
+\end{table}
+
+Here is a verification of every case. If $n\equiv0\pmod4$ and $s$ is
+even, positivity in~\eqref{eq:positive} gives $E\geq0$, with equality
+only at $(0,0)$. If $n\equiv0\pmod4$ and $s$ is odd, then $u,v$ are
+odd and $u+v\equiv2\pmod4$. Thus the three squares in~\eqref{eq:positive}
+are at least $1,1,4$, respectively. Equality requires $u=v=\pm1$.
+
+If $n$ is odd and $s$ is even, then $u$ is even, $v$ is odd, and $u+v$
+is odd. Consequently $E\geq(2-T)+(T-1)=1$. Equality requires
+$u=0$, $|v|=1$, and the last congruence in~\eqref{eq:congruences}
+fixes the sign of $v$. If $n$ and $s$ are odd, the corresponding bound is
+$E\geq(S-T+1)+(T-1)=S$, with $|u|=1$, $v=0$ and the sign of $u$
+again fixed by that congruence.
+
+If $n\equiv2\pmod4$ and $s$ is odd, then $u,v$ are odd, giving
+$E\geq(S-T+1)+(2-T)=S+3-2T$. Equality holds exactly when
+$u=-v=\pm1$. Finally, if $n\equiv2\pmod4$ and $s$ is even,
+then $u,v$ are even, $u-v\equiv2\pmod4$, and $u+v\equiv2\pmod4$.
+Hence $u^2+v^2\geq4$ and $(u+v)^2\geq4$. Since
+$S-T+1>2-T$, we obtain
+\[
+ E\geq4(2-T)+4(T-1)=4,
+\]
+with equality exactly at $u=0$, $v=\pm2$.
+
+\subsection{The nearest integers and comparison of the two parities}
+
+Define
+\[
+ H(s)=\frac{n^2+2nTs-Ds^2}{4}.
+\]
+Strict concavity of $x^p$ on the positive real axis gives
+$2T>1+S$, so $D>2$. The vertex of $H$ is
+\begin{equation}\label{eq:vertex}
+ s_* = \frac{nT}{D}=\frac n2+\delta,
+ \qquad \delta=\frac{n(S-1)}{2D}.
+\end{equation}
+The binomial theorem, with $n\geq2$, gives
+$(1+2/n)^n>1+n(2/n)=3$. Thus
+\begin{equation}\label{eq:bounds}
+ n(S-1)<2,\qquad 0<\delta<\frac12.
+\end{equation}
+
+For fixed $n$, let $L(s)$ denote the lower bound from
+Table~\ref{tab:penalty} for the parity of $s$. Then
+$Q(a)\leq U(s):=H(s)-L(s)/4$.
+On each parity class $L(s)$ is constant; consequently its upper bound
+$U(s)$ is uniquely maximized at the integer of that parity nearest to
+$s_*$. Equation~\eqref{eq:bounds} makes these two integers explicit in
+Table~\ref{tab:comparison}.
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$n\bmod4$ & Even candidate & Odd candidate & Winning $s$ & Winning $U$ minus other $U$\\
+\midrule
+0 & $n/2$ & $n/2+1$ & $n/2$ & $(4T-n(S-1))/4$\\
+1 & $(n-1)/2$ & $(n+1)/2$ & $(n+1)/2$ & $(n-1)(S-1)/4$\\
+2 & $n/2+1$ & $n/2$ & $n/2$ & $(2D-n(S-1))/4$\\
+3 & $(n+1)/2$ & $(n-1)/2$ & $(n+1)/2$ & $(n+1)(S-1)/4$\\
+\bottomrule
+\end{tabular}
+\caption{The two parity candidates and their strict comparison.}
+\label{tab:comparison}
+\end{table}
+
+Both candidates have $s\geq3$ and $n-s\geq3$ when $n\geq7$.
+Every equality pair in the corresponding row of
+Table~\ref{tab:penalty} therefore satisfies the nonnegativity constraints
+in~\eqref{eq:inverse}. Thus both upper bounds being compared are attained
+in $\mathcal A_n$. Substitution into $U$ gives the differences in the last
+column. Each is strictly positive by $S>1$, $T>1$, $D>2$, and
+\eqref{eq:bounds}.
+
+The winning $(s,u,v)$ are therefore
+\[
+\begin{array}{c|c}
+n & (s,u,v)\\ \hline
+4k & (2k,0,0)\\
+4k+1 & (2k+1,-1,0)\\
+4k+2 & (2k+1,1,-1)\ \text{or}\ (2k+1,-1,1)\\
+4k+3 & (2k+2,0,-1).
+\end{array}
+\]
+Using~\eqref{eq:inverse} gives exactly Table~\ref{tab:winners}.
+The strict comparison between parities, uniqueness of the nearest integer
+within each parity, and the equality conditions for $E$ exclude every
+other maximizing vector in $\mathcal A_n$.
+
+\section{Connected simple realizations}
+
+It remains to show that each optimal integer vector is realized by a
+chemical graph. We first give a small-degree graphicality lemma.
+
+\begin{lemma}\label{lem:graphical}
+If $n\geq8$ and $d_1,\ldots,d_n\in\{1,2,3,4\}$ have even sum, then
+they are the degrees of a simple graph.
+\end{lemma}
+\begin{proof}
+Arrange the sequence in nonincreasing order. By the Erd\H os--Gallai
+criterion~\cite{erdosgallai}, it suffices to check, for $1\leq r\leq n$,
+\[
+ \sum_{i=1}^r d_i\leq r(r-1)+\sum_{i=r+1}^n\min(r,d_i).
+\]
+For $r=1$, the left side is at most $4$ and the right side is $n-1\geq7$.
+For $r=2$, the respective bounds are $8$ and $2+(n-2)=n\geq8$.
+For $r=3$, they are $12$ and $6+(n-3)=n+3$, which suffice for $n\geq9$.
+If $n=8$ and the inequality at $r=3$ fails, integrality forces the left
+side to be $12$ and the right side to be $11$. The degree sequence must
+then be $(4,4,4,1,1,1,1,1)$, whose sum is odd, a contradiction.
+For $r=4$, the left side is at most $16$ and the right side at least
+$12+(n-4)=n+8\geq16$. For $r\geq5$, the term $r(r-1)$ alone is at
+least $4r$, which bounds the left side.
+\end{proof}
+
+For completeness, we also prove the connected-realization criterion
+recorded in~\cite[(1.6)]{erdosgallai}.
+\begin{lemma}\label{lem:connected}
+A graphical sequence of $n$ positive integers with sum at least
+$2(n-1)$ has a connected simple realization.
+\end{lemma}
+\begin{proof}
+Start with any simple realization. If it has $c\geq2$ components and
+every component is acyclic, then it has $n-c\leq n-2$ edges, contrary to
+the assumed degree sum. Thus a component contains a cycle. Choose an
+edge $uv$ of such a cycle and an edge $xy$ in another component, the
+latter existing because all degrees are positive. Replace $uv,xy$ by
+$ux,vy$. The new edges did not previously exist and have distinct
+endpoints, so the graph remains simple and every degree is unchanged.
+Removing $uv$ leaves its component connected. If $xy$ was a bridge,
+its two resulting pieces both join the first component through the new
+edges; otherwise its component remains connected and joins the first.
+In either case the number of components decreases by one. Repeating
+this operation gives a connected realization.
+\end{proof}
+
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:main}]
+The vectors in Table~\ref{tab:winners} have even degree sums, respectively
+\[
+ 10k,\qquad 10k+4,\qquad 10k+6\ \text{or}\ 10k+4,
+ \qquad 10k+8.
+\]
+Each sum is at least $2(n-1)$ in the stated range $n\geq7$.
+For $n\geq8$, Lemmas~\ref{lem:graphical} and~\ref{lem:connected} therefore
+give connected simple realizations with all degrees at most four.
+For $n=7$, the required sequence is $(4,4,3,3,2,1,1)$; on vertices
+$0,\ldots,6$ the edge set
+\[
+ \{02,03,04,05,12,13,14,16,23\}
+\]
+is an explicit connected simple realization, where $ij$ denotes $\{i,j\}$.
+Thus the maximum over $\mathcal A_n$ is attained in the original graph
+class. Since every chemical graph gives a vector in $\mathcal A_n$, the
+classification already obtained proves the theorem.
+\end{proof}
+
+\section{Reproducible finite checks}
+
+The supplied \texttt{verify.py} script uses only the Python standard
+library. It enumerates all $317{,}826$ parity-feasible multiplicity vectors for
+$7\leq n\leq60$. It encloses $2^{1/n}$ and $3^{1/n}$ between rational
+bounds with denominator $2^{48}$, certifying the bounds by integer powers.
+For every nonmaximizing vector it verifies a strictly positive lower
+bound on the difference from the stated maximum. The two maximizing
+vectors when $n\equiv2\pmod4$ have identical integer coefficient triples
+in the basis $(1,T,S)$, so their equality is exact.
+The script also constructs and checks all $242$ listed maximizing
+degree sequences for $7\leq n\leq200$, using degree-preserving edge
+switches to obtain connected realizations. Edge lists and numerical
+certificates are included with the script. These are finite consistency
+checks, not premises of the proof for arbitrary $n$.
+
+\paragraph{AI use and verification status.}
+This research was completed with AI assistance. The mathematical argument
+and reproducible checks are supplied for scrutiny. This version does not
+claim verification in a proof assistant or external peer review.
+
+\begin{thebibliography}{9}
+\bibitem{knor}
+M.~Knor, R.~\v Skrekovski, S.~Filipovski, and D.~Dimitrov,
+\emph{Extremizing antiregular graphs by modifying total $\sigma$-irregularity},
+Applied Mathematics and Computation \textbf{490} (2025), 129199.
+\href{https://doi.org/10.1016/j.amc.2024.129199}{doi:10.1016/j.amc.2024.129199}.
+Preprint \href{https://arxiv.org/abs/2411.01530v1}{arXiv:2411.01530v1}
+(2024), especially Theorem~9 and Conjecture~10.
+
+\bibitem{dimitrov}
+D.~Dimitrov, S.~Filipovski, M.~Knor, and R.~\v Skrekovski,
+\emph{Modified Total Sigma-Irregularity in Chemical Graphs},
+Discrete Mathematics Letters \textbf{18} (2026), 1--7.
+\href{https://doi.org/10.47443/dml.2026.041}{doi:10.47443/dml.2026.041}.
+
+\bibitem{erdosgallai}
+P.~Erd\H os and T.~Gallai,
+\emph{Gr\'afok el\H o\'irt fok\'u pontokkal},
+Matematikai Lapok \textbf{11} (1960), 264--274 (in Hungarian).
+\href{https://users.renyi.hu/~p_erdos/1961-05.pdf}{Full-text archive}.
+\end{thebibliography}
+\end{document}

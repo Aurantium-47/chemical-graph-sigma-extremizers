@@ -1,0 +1,1498 @@
+{
+  "summary": {
+    "python": "3.8.3 (default, Jul  2 2020, 17:30:36) [MSC v.1916 64 bit (AMD64)]",
+    "dependency": "Python standard library only",
+    "integer_enumeration_range": [
+      7,
+      60
+    ],
+    "total_vectors": 317826,
+    "min_gap_record": {
+      "n": 9,
+      "vectors": 110,
+      "winners": [
+        [
+          2,
+          2,
+          2,
+          3
+        ]
+      ],
+      "min_certified_difference_numerator": 73088335085638,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          304009789850829,
+          304009789850830
+        ],
+        "3": [
+          318019144253475,
+          318019144253476
+        ]
+      }
+    },
+    "n_values": 54,
+    "graphicality_boundary": [
+      {
+        "n": 7,
+        "vectors": 60,
+        "nongraphical_vectors": [
+          [
+            4,
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "n": 8,
+        "vectors": 85,
+        "nongraphical_vectors": []
+      },
+      {
+        "n": 9,
+        "vectors": 110,
+        "nongraphical_vectors": []
+      }
+    ],
+    "candidate_graphs": 242,
+    "graph_n_range": [
+      7,
+      200
+    ],
+    "graphs_requiring_switch": 242,
+    "total_switches": 4376,
+    "original_n7": {
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "degrees": [
+        4,
+        4,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "connected": true,
+      "simple": true
+    },
+    "graph_certificate_file": "connected_graphs.json",
+    "graph_certificate_sha256": "d14cf75b9536c80b581b75d88040deee7a9e141a36b8466258b39634a30dd1e1",
+    "passed": true,
+    "seconds": 2.503143310546875
+  },
+  "enumeration": [
+    {
+      "n": 7,
+      "vectors": 60,
+      "winners": [
+        [
+          2,
+          1,
+          2,
+          2
+        ]
+      ],
+      "min_certified_difference_numerator": 95662543127348,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          310773570147815,
+          310773570147816
+        ],
+        "3": [
+          329306248274330,
+          329306248274331
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "vectors": 85,
+      "winners": [
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "min_certified_difference_numerator": 224082890928121,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          306950638654743,
+          306950638654744
+        ],
+        "3": [
+          322908850573966,
+          322908850573967
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "vectors": 110,
+      "winners": [
+        [
+          2,
+          2,
+          2,
+          3
+        ]
+      ],
+      "min_certified_difference_numerator": 73088335085638,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          304009789850829,
+          304009789850830
+        ],
+        "3": [
+          318019144253475,
+          318019144253476
+        ]
+      }
+    },
+    {
+      "n": 10,
+      "vectors": 146,
+      "winners": [
+        [
+          2,
+          3,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          3,
+          2
+        ]
+      ],
+      "min_certified_difference_numerator": 203620107286219,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          301677410406502,
+          301677410406503
+        ],
+        "3": [
+          314160744417416,
+          314160744417417
+        ]
+      }
+    },
+    {
+      "n": 11,
+      "vectors": 182,
+      "winners": [
+        [
+          3,
+          2,
+          3,
+          3
+        ]
+      ],
+      "min_certified_difference_numerator": 88691219917215,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          299782415846005,
+          299782415846006
+        ],
+        "3": [
+          311038716683061,
+          311038716683062
+        ]
+      }
+    },
+    {
+      "n": 12,
+      "vectors": 231,
+      "winners": [
+        [
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "min_certified_difference_numerator": 217255059297139,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          298212349810582,
+          298212349810583
+        ],
+        "3": [
+          308460740215136,
+          308460740215137
+        ]
+      }
+    },
+    {
+      "n": 13,
+      "vectors": 280,
+      "winners": [
+        [
+          3,
+          3,
+          3,
+          4
+        ]
+      ],
+      "min_certified_difference_numerator": 74463284775390,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          296890256812861,
+          296890256812862
+        ],
+        "3": [
+          306296071635786,
+          306296071635787
+        ]
+      }
+    },
+    {
+      "n": 14,
+      "vectors": 344,
+      "winners": [
+        [
+          3,
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          4,
+          3
+        ]
+      ],
+      "min_certified_difference_numerator": 203850662541054,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          295761700393482,
+          295761700393483
+        ],
+        "3": [
+          304452736173762,
+          304452736173763
+        ]
+      }
+    },
+    {
+      "n": 15,
+      "vectors": 408,
+      "winners": [
+        [
+          4,
+          3,
+          4,
+          4
+        ]
+      ],
+      "min_certified_difference_numerator": 85556711399272,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          294787088830142,
+          294787088830143
+        ],
+        "3": [
+          302864154560474,
+          302864154560475
+        ]
+      }
+    },
+    {
+      "n": 16,
+      "vectors": 489,
+      "winners": [
+        [
+          4,
+          4,
+          4,
+          4
+        ]
+      ],
+      "min_certified_difference_numerator": 213913058817712,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          293936938588304,
+          293936938588305
+        ],
+        "3": [
+          301480946653303,
+          301480946653304
+        ]
+      }
+    },
+    {
+      "n": 17,
+      "vectors": 570,
+      "winners": [
+        [
+          4,
+          4,
+          4,
+          5
+        ]
+      ],
+      "min_certified_difference_numerator": 75162957860856,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          293188842339319,
+          293188842339320
+        ],
+        "3": [
+          300265716175870,
+          300265716175871
+        ]
+      }
+    },
+    {
+      "n": 18,
+      "vectors": 670,
+      "winners": [
+        [
+          4,
+          5,
+          4,
+          5
+        ],
+        [
+          5,
+          4,
+          5,
+          4
+        ]
+      ],
+      "min_certified_difference_numerator": 203952229052467,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          292525466443647,
+          292525466443648
+        ],
+        "3": [
+          299189624188891,
+          299189624188892
+        ]
+      }
+    },
+    {
+      "n": 19,
+      "vectors": 770,
+      "winners": [
+        [
+          5,
+          4,
+          5,
+          5
+        ]
+      ],
+      "min_certified_difference_numerator": 83775488429415,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          291933191980831,
+          291933191980832
+        ],
+        "3": [
+          298230074396539,
+          298230074396540
+        ]
+      }
+    },
+    {
+      "n": 20,
+      "vectors": 891,
+      "winners": [
+        [
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "min_certified_difference_numerator": 211930498533135,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          291401170327610,
+          291401170327611
+        ],
+        "3": [
+          297369111069550,
+          297369111069551
+        ]
+      }
+    },
+    {
+      "n": 21,
+      "vectors": 1012,
+      "winners": [
+        [
+          5,
+          5,
+          5,
+          6
+        ]
+      ],
+      "min_certified_difference_numerator": 75586547282920,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          290920652901020,
+          290920652901021
+        ],
+        "3": [
+          296592286167240,
+          296592286167241
+        ]
+      }
+    },
+    {
+      "n": 22,
+      "vectors": 1156,
+      "winners": [
+        [
+          5,
+          6,
+          5,
+          6
+        ],
+        [
+          6,
+          5,
+          6,
+          5
+        ]
+      ],
+      "min_certified_difference_numerator": 204007309788478,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          290484506503390,
+          290484506503391
+        ],
+        "3": [
+          295887842829807,
+          295887842829808
+        ]
+      }
+    },
+    {
+      "n": 23,
+      "vectors": 1300,
+      "winners": [
+        [
+          6,
+          5,
+          6,
+          6
+        ]
+      ],
+      "min_certified_difference_numerator": 82626840328674,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          290086856957177,
+          290086856957178
+        ],
+        "3": [
+          295246116765435,
+          295246116765436
+        ]
+      }
+    },
+    {
+      "n": 24,
+      "vectors": 1469,
+      "winners": [
+        [
+          6,
+          6,
+          6,
+          6
+        ]
+      ],
+      "min_certified_difference_numerator": 210618139802413,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          289722823087453,
+          289722823087454
+        ],
+        "3": [
+          294659090591495,
+          294659090591496
+        ]
+      }
+    },
+    {
+      "n": 25,
+      "vectors": 1638,
+      "winners": [
+        [
+          6,
+          6,
+          6,
+          7
+        ]
+      ],
+      "min_certified_difference_numerator": 75870484152138,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          289388315413919,
+          289388315413920
+        ],
+        "3": [
+          294120057402679,
+          294120057402680
+        ]
+      }
+    },
+    {
+      "n": 26,
+      "vectors": 1834,
+      "winners": [
+        [
+          6,
+          7,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          7,
+          6
+        ]
+      ],
+      "min_certified_difference_numerator": 204041173935894,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          289079881904675,
+          289079881904676
+        ],
+        "3": [
+          293623363563338,
+          293623363563339
+        ]
+      }
+    },
+    {
+      "n": 27,
+      "vectors": 2030,
+      "winners": [
+        [
+          7,
+          6,
+          7,
+          7
+        ]
+      ],
+      "min_certified_difference_numerator": 81824631507647,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          288794588437942,
+          288794588437943
+        ],
+        "3": [
+          293164209783177,
+          293164209783178
+        ]
+      }
+    },
+    {
+      "n": 28,
+      "vectors": 2255,
+      "winners": [
+        [
+          7,
+          7,
+          7,
+          7
+        ]
+      ],
+      "min_certified_difference_numerator": 209685292751148,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          288529925190021,
+          288529925190022
+        ],
+        "3": [
+          292738495630494,
+          292738495630495
+        ]
+      }
+    },
+    {
+      "n": 29,
+      "vectors": 2480,
+      "winners": [
+        [
+          7,
+          7,
+          7,
+          8
+        ]
+      ],
+      "min_certified_difference_numerator": 76074040672371,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          288283732618383,
+          288283732618384
+        ],
+        "3": [
+          292342696806709,
+          292342696806710
+        ]
+      }
+    },
+    {
+      "n": 30,
+      "vectors": 2736,
+      "winners": [
+        [
+          7,
+          8,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          8,
+          7
+        ]
+      ],
+      "min_certified_difference_numerator": 204063816878685,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          288054142416085,
+          288054142416086
+        ],
+        "3": [
+          291973767402830,
+          291973767402831
+        ]
+      }
+    },
+    {
+      "n": 31,
+      "vectors": 2992,
+      "winners": [
+        [
+          8,
+          7,
+          8,
+          8
+        ]
+      ],
+      "min_certified_difference_numerator": 81232677516464,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          287839530019917,
+          287839530019918
+        ],
+        "3": [
+          291629061400214,
+          291629061400215
+        ]
+      }
+    },
+    {
+      "n": 32,
+      "vectors": 3281,
+      "winners": [
+        [
+          8,
+          8,
+          8,
+          8
+        ]
+      ],
+      "min_certified_difference_numerator": 208988136715215,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          287638476118103,
+          287638476118104
+        ],
+        "3": [
+          291306269136016,
+          291306269136017
+        ]
+      }
+    },
+    {
+      "n": 33,
+      "vectors": 3570,
+      "winners": [
+        [
+          8,
+          8,
+          8,
+          9
+        ]
+      ],
+      "min_certified_difference_numerator": 76227110377384,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          287449735228919,
+          287449735228920
+        ],
+        "3": [
+          291003365507829,
+          291003365507830
+        ]
+      }
+    },
+    {
+      "n": 34,
+      "vectors": 3894,
+      "winners": [
+        [
+          8,
+          9,
+          8,
+          9
+        ],
+        [
+          9,
+          8,
+          9,
+          8
+        ]
+      ],
+      "min_certified_difference_numerator": 204079893110770,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          287272209879904,
+          287272209879905
+        ],
+        "3": [
+          290718567462781,
+          290718567462782
+        ]
+      }
+    },
+    {
+      "n": 35,
+      "vectors": 4218,
+      "winners": [
+        [
+          9,
+          8,
+          9,
+          9
+        ]
+      ],
+      "min_certified_difference_numerator": 80777899577052,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          287104929256663,
+          287104929256664
+        ],
+        "3": [
+          290450298885884,
+          290450298885885
+        ]
+      }
+    },
+    {
+      "n": 36,
+      "vectors": 4579,
+      "winners": [
+        [
+          9,
+          9,
+          9,
+          9
+        ]
+      ],
+      "min_certified_difference_numerator": 208447368991434,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286947031443957,
+          286947031443958
+        ],
+        "3": [
+          290197161427602,
+          290197161427603
+        ]
+      }
+    },
+    {
+      "n": 37,
+      "vectors": 4940,
+      "winners": [
+        [
+          9,
+          9,
+          9,
+          10
+        ]
+      ],
+      "min_certified_difference_numerator": 76346400780837,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286797748573215,
+          286797748573216
+        ],
+        "3": [
+          289957910130749,
+          289957910130750
+        ]
+      }
+    },
+    {
+      "n": 38,
+      "vectors": 5340,
+      "winners": [
+        [
+          9,
+          10,
+          9,
+          10
+        ],
+        [
+          10,
+          9,
+          10,
+          9
+        ]
+      ],
+      "min_certified_difference_numerator": 204091831840621,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286656394336271,
+          286656394336272
+        ],
+        "3": [
+          289731432960220,
+          289731432960221
+        ]
+      }
+    },
+    {
+      "n": 39,
+      "vectors": 5740,
+      "winners": [
+        [
+          10,
+          9,
+          10,
+          10
+        ]
+      ],
+      "min_certified_difference_numerator": 80417568147640,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286522353436901,
+          286522353436902
+        ],
+        "3": [
+          289516733525420,
+          289516733525421
+        ]
+      }
+    },
+    {
+      "n": 40,
+      "vectors": 6181,
+      "winners": [
+        [
+          10,
+          10,
+          10,
+          10
+        ]
+      ],
+      "min_certified_difference_numerator": 208015675452709,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286395072638169,
+          286395072638170
+        ],
+        "3": [
+          289312916429201,
+          289312916429202
+        ]
+      }
+    },
+    {
+      "n": 41,
+      "vectors": 6622,
+      "winners": [
+        [
+          10,
+          10,
+          10,
+          11
+        ]
+      ],
+      "min_certified_difference_numerator": 76441980783600,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286274053130848,
+          286274053130849
+        ],
+        "3": [
+          289119174789016,
+          289119174789017
+        ]
+      }
+    },
+    {
+      "n": 42,
+      "vectors": 7106,
+      "winners": [
+        [
+          10,
+          11,
+          10,
+          11
+        ],
+        [
+          11,
+          10,
+          11,
+          10
+        ]
+      ],
+      "min_certified_difference_numerator": 204101012618220,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286158844000956,
+          286158844000957
+        ],
+        "3": [
+          288934779563631,
+          288934779563632
+        ]
+      }
+    },
+    {
+      "n": 43,
+      "vectors": 7590,
+      "winners": [
+        [
+          11,
+          10,
+          11,
+          11
+        ]
+      ],
+      "min_certified_difference_numerator": 80125030448672,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          286049036616051,
+          286049036616052
+        ],
+        "3": [
+          288759070387808,
+          288759070387809
+        ]
+      }
+    },
+    {
+      "n": 44,
+      "vectors": 8119,
+      "winners": [
+        [
+          11,
+          11,
+          11,
+          11
+        ]
+      ],
+      "min_certified_difference_numerator": 207663079206962,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285944259783000,
+          285944259783001
+        ],
+        "3": [
+          288591447672113,
+          288591447672114
+        ]
+      }
+    },
+    {
+      "n": 45,
+      "vectors": 8648,
+      "winners": [
+        [
+          11,
+          11,
+          11,
+          12
+        ]
+      ],
+      "min_certified_difference_numerator": 76520279638737,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285844175556287,
+          285844175556288
+        ],
+        "3": [
+          288431365768723,
+          288431365768724
+        ]
+      }
+    },
+    {
+      "n": 46,
+      "vectors": 9224,
+      "winners": [
+        [
+          11,
+          12,
+          11,
+          12
+        ],
+        [
+          12,
+          11,
+          12,
+          11
+        ]
+      ],
+      "min_certified_difference_numerator": 204108271655799,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285748475597139,
+          285748475597140
+        ],
+        "3": [
+          288278327039100,
+          288278327039101
+        ]
+      }
+    },
+    {
+      "n": 47,
+      "vectors": 9800,
+      "winners": [
+        [
+          12,
+          11,
+          12,
+          12
+        ]
+      ],
+      "min_certified_difference_numerator": 79882799724396,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285656878000837,
+          285656878000838
+        ],
+        "3": [
+          288131876687689,
+          288131876687690
+        ]
+      }
+    },
+    {
+      "n": 48,
+      "vectors": 10425,
+      "winners": [
+        [
+          12,
+          12,
+          12,
+          12
+        ]
+      ],
+      "min_certified_difference_numerator": 207369666067252,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285569124523444,
+          285569124523445
+        ],
+        "3": [
+          287991598248671,
+          287991598248672
+        ]
+      }
+    },
+    {
+      "n": 49,
+      "vectors": 11050,
+      "winners": [
+        [
+          12,
+          12,
+          12,
+          13
+        ]
+      ],
+      "min_certified_difference_numerator": 76585595049576,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285484978150495,
+          285484978150496
+        ],
+        "3": [
+          287857109631454,
+          287857109631455
+        ]
+      }
+    },
+    {
+      "n": 50,
+      "vectors": 11726,
+      "winners": [
+        [
+          12,
+          13,
+          12,
+          13
+        ],
+        [
+          13,
+          12,
+          13,
+          12
+        ]
+      ],
+      "min_certified_difference_numerator": 204114142802146,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285404220959447,
+          285404220959448
+        ],
+        "3": [
+          287728059645832,
+          287728059645833
+        ]
+      }
+    },
+    {
+      "n": 51,
+      "vectors": 12402,
+      "winners": [
+        [
+          13,
+          12,
+          13,
+          13
+        ]
+      ],
+      "min_certified_difference_numerator": 79678926985216,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285326652235294,
+          285326652235295
+        ],
+        "3": [
+          287604124940288,
+          287604124940289
+        ]
+      }
+    },
+    {
+      "n": 52,
+      "vectors": 13131,
+      "winners": [
+        [
+          13,
+          13,
+          13,
+          13
+        ]
+      ],
+      "min_certified_difference_numerator": 207121689179435,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285252086805053,
+          285252086805054
+        ],
+        "3": [
+          287485007297241,
+          287485007297242
+        ]
+      }
+    },
+    {
+      "n": 53,
+      "vectors": 13860,
+      "winners": [
+        [
+          13,
+          13,
+          13,
+          14
+        ]
+      ],
+      "min_certified_difference_numerator": 76640908850558,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285180353562009,
+          285180353562010
+        ],
+        "3": [
+          287370431237622,
+          287370431237623
+        ]
+      }
+    },
+    {
+      "n": 54,
+      "vectors": 14644,
+      "winners": [
+        [
+          13,
+          14,
+          13,
+          14
+        ],
+        [
+          14,
+          13,
+          14,
+          13
+        ]
+      ],
+      "min_certified_difference_numerator": 204118981584352,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285111294154990,
+          285111294154991
+        ],
+        "3": [
+          287260141894272,
+          287260141894273
+        ]
+      }
+    },
+    {
+      "n": 55,
+      "vectors": 15428,
+      "winners": [
+        [
+          14,
+          13,
+          14,
+          14
+        ]
+      ],
+      "min_certified_difference_numerator": 79504969725482,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          285044761821507,
+          285044761821508
+        ],
+        "3": [
+          287153903119619,
+          287153903119620
+        ]
+      }
+    },
+    {
+      "n": 56,
+      "vectors": 16269,
+      "winners": [
+        [
+          14,
+          14,
+          14,
+          14
+        ]
+      ],
+      "min_certified_difference_numerator": 206909353122971,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          284980620346697,
+          284980620346698
+        ],
+        "3": [
+          287051495798064,
+          287051495798065
+        ]
+      }
+    },
+    {
+      "n": 57,
+      "vectors": 17110,
+      "winners": [
+        [
+          14,
+          14,
+          14,
+          15
+        ]
+      ],
+      "min_certified_difference_numerator": 76688354778588,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          284918743132498,
+          284918743132499
+        ],
+        "3": [
+          286952716337698,
+          286952716337699
+        ]
+      }
+    },
+    {
+      "n": 58,
+      "vectors": 18010,
+      "winners": [
+        [
+          14,
+          15,
+          14,
+          15
+        ],
+        [
+          15,
+          14,
+          15,
+          14
+        ]
+      ],
+      "min_certified_difference_numerator": 204123033230856,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          284859012363696,
+          284859012363697
+        ],
+        "3": [
+          286857375319511,
+          286857375319512
+        ]
+      }
+    },
+    {
+      "n": 59,
+      "vectors": 18910,
+      "winners": [
+        [
+          15,
+          14,
+          15,
+          15
+        ]
+      ],
+      "min_certified_difference_numerator": 79354793618490,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          284801318259269,
+          284801318259270
+        ],
+        "3": [
+          286765296285222,
+          286765296285223
+        ]
+      }
+    },
+    {
+      "n": 60,
+      "vectors": 19871,
+      "winners": [
+        [
+          15,
+          15,
+          15,
+          15
+        ]
+      ],
+      "min_certified_difference_numerator": 206725489347360,
+      "difference_denominator": 281474976710656,
+      "root_bounds": {
+        "2": [
+          284745558399030,
+          284745558399031
+        ],
+        "3": [
+          286676314647433,
+          286676314647434
+        ]
+      }
+    }
+  ]
+}
