@@ -1,7 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Finite
 import Mathlib.Data.Fintype.Sum
 import Mathlib.Tactic.FinCases
-import Lean.Elab.Tactic.Omega
 
 namespace W03
 
@@ -93,15 +92,21 @@ theorem extend4_degree_inl {V : Type*} [Fintype V]
   by_cases hxu : x = u
   · subst x
     have hv : v ∈ neighbors G u := (mem_neighbors G u v).2 huv
-    have hp := Finset.card_pos.mpr ⟨v, hv⟩
     simp only [vertexDegree, neighbors_inl_u G u v huv]
-    simp [Finset.card_erase_of_mem hv, Function.Embedding.inl] <;> omega
+    have hn : (Sum.inr 2 : V ⊕ Fin 4) ∉
+        ((neighbors G u).erase v).map Function.Embedding.inl := by
+      simp [Function.Embedding.inl]
+    rw [Finset.card_insert_of_not_mem hn, Finset.card_map]
+    exact Finset.card_erase_add_one hv
   · by_cases hxv : x = v
     · subst x
       have hu : u ∈ neighbors G v := (mem_neighbors G v u).2 huv.symm
-      have hp := Finset.card_pos.mpr ⟨u, hu⟩
       simp only [vertexDegree, neighbors_inl_v G u v huv]
-      simp [Finset.card_erase_of_mem hu, Function.Embedding.inl] <;> omega
+      have hn : (Sum.inr 3 : V ⊕ Fin 4) ∉
+          ((neighbors G v).erase u).map Function.Embedding.inl := by
+        simp [Function.Embedding.inl]
+      rw [Finset.card_insert_of_not_mem hn, Finset.card_map]
+      exact Finset.card_erase_add_one hu
     · simp [vertexDegree, neighbors_inl_other G u v x hxu hxv]
 
 theorem neighbors_inr_zero {V : Type*} [Fintype V]
