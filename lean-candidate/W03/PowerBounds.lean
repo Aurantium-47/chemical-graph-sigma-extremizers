@@ -31,9 +31,12 @@ theorem power_basic_bounds {n : ℕ} (hn : 2 ≤ n) :
 theorem powerD_gt_two {n : ℕ} (hn : 2 ≤ n) : 2 < powerD n := by
   have hp := reciprocal_exponent_bounds hn
   have hmid := (Real.strictConcaveOn_rpow hp.1 hp.2).2
-    (x := (1 : ℝ)) (by norm_num) (y := (3 : ℝ)) (by norm_num)
-    (by norm_num) (a := (1 / 2 : ℝ)) (b := (1 / 2 : ℝ))
-    (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num : (1 : ℝ) ∈ Set.Ici 0)
+    (by norm_num : (3 : ℝ) ∈ Set.Ici 0)
+    (by norm_num : (1 : ℝ) ≠ 3)
+    (by norm_num : 0 < (1 / 2 : ℝ))
+    (by norm_num : 0 < (1 / 2 : ℝ))
+    (by norm_num : (1 / 2 : ℝ) + (1 / 2 : ℝ) = 1)
   unfold powerD powerT powerS
   norm_num [smul_eq_mul, Real.one_rpow] at hmid ⊢
   linarith
@@ -43,7 +46,7 @@ theorem scaled_powerS_sub_one_lt_two {n : ℕ} (hn : 2 ≤ n) :
   have hp := reciprocal_exponent_bounds hn
   have hnpos : (0 : ℝ) < (n : ℝ) := by exact_mod_cast (by omega : 0 < n)
   have hnp : (n : ℝ) * (1 / (n : ℝ)) = 1 := mul_one_div_cancel hnpos.ne'
-  have hb := Real.rpow_one_add_lt_one_add_mul_self
+  have hb := rpow_one_add_lt_one_add_mul_self
     (s := (2 : ℝ)) (by norm_num) (by norm_num) hp.1 hp.2
   rw [show (1 : ℝ) + 2 = 3 from by norm_num] at hb
   change powerS n < 1 + (1 / (n : ℝ)) * 2 at hb
