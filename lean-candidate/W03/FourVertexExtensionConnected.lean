@@ -17,10 +17,14 @@ theorem extend4_reachable_of_adj {V : Type*} (G : SimpleGraph V) (u v : V)
     {a b : V} (hab : G.Adj a b) :
     (extend4 G u v).Reachable (Sum.inl a) (Sum.inl b) := by
   by_cases h : a = u ∧ b = v
-  · rcases h with ⟨rfl, rfl⟩
+  · rcases h with ⟨ha, hb⟩
+    subst a
+    subst b
     exact extend4_reachable_uv G u v
   · by_cases h' : a = v ∧ b = u
-    · rcases h' with ⟨rfl, rfl⟩
+    · rcases h' with ⟨ha, hb⟩
+      subst a
+      subst b
       exact (extend4_reachable_uv G u v).symm
     · exact (show (extend4 G u v).Adj (Sum.inl a) (Sum.inl b) from
         ⟨hab, h, h'⟩).reachable
@@ -49,7 +53,7 @@ theorem extend4_reachable_new {V : Type*} (G : SimpleGraph V) (u v : V)
 
 theorem extend4_connected {V : Type*} (G : SimpleGraph V) (u v : V)
     (hG : G.Connected) : (extend4 G u v).Connected := by
-  apply SimpleGraph.connected_iff_exists_forall_reachable.mpr
+  apply (SimpleGraph.connected_iff_exists_forall_reachable (extend4 G u v)).mpr
   refine ⟨Sum.inl u, ?_⟩
   rintro (x | i)
   · exact extend4_reachable_old G u v (hG u x)
