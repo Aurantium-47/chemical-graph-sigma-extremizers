@@ -1,4 +1,4 @@
-name: Four-vertex extension bridge
+name: Four-vertex extension multiplicities and relabeling
 
 'on':
   push:
@@ -20,7 +20,7 @@ jobs:
       LEAN_NUM_THREADS: '1'
       MATHLIB_NO_CACHE_ON_UPDATE: '1'
     steps:
-      - name: Check the fixed candidate, compile two modules, and inspect declarations
+      - name: Check the fixed candidate, compile four modules, and inspect declarations
         shell: bash
         run: |
           set -euo pipefail
@@ -101,8 +101,8 @@ jobs:
           print('BUDGET: single thread; 6 GiB group RSS; 512 MiB group swap; 2 GiB available floor; 8 GiB before every command; 180 s/module; 1200 s including setup; no retry.', flush=True)
           root = workspace / 'public-source'
           baseline = '081c9289a709d55457c172f3b355d77c5b6a4688'
-          expected = {'lean-candidate/lake-manifest.json': '7d63750392d2e1501fdc587db7dfe7c4a6a59ce68d83b492feb340863f309269', 'lean-candidate/lakefile.toml': '0e605495d5cbd33390d3f84dc0a9761f46503b7153f2407d7d28e26ee8ade1e3', 'lean-candidate/lean-toolchain': '55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea', 'lean-candidate/W03/FourVertexExtension.lean': '6c21281db6d0163705fe6e6a634a17f52cc4694a5cd136dfeb7766cfb8eede90', 'lean-candidate/W03/FourVertexExtensionConnected.lean': '4dd9e309ab1af8c3fb5ba36e14d9c4ef96f7f0764d0e16663f8d7fe9c7cb1d52'}
-          expected_names = ['W03.neighbors', 'W03.mem_neighbors', 'W03.vertexDegree', 'W03.vertexDegree_eq_degree', 'W03.core4', 'W03.extend4', 'W03.neighbors_inl_u', 'W03.neighbors_inl_v', 'W03.neighbors_inl_other', 'W03.extend4_degree_inl', 'W03.neighbors_inr_zero', 'W03.neighbors_inr_one', 'W03.neighbors_inr_two', 'W03.neighbors_inr_three', 'W03.extend4_degree_inr', 'W03.extend4_markedEdge', 'W03.extend4_reachable_uv', 'W03.extend4_reachable_of_adj', 'W03.extend4_reachable_old', 'W03.extend4_reachable_new', 'W03.extend4_connected', 'W03.extend4_bridge']
+          expected = {'lean-candidate/lake-manifest.json': '7d63750392d2e1501fdc587db7dfe7c4a6a59ce68d83b492feb340863f309269', 'lean-candidate/lakefile.toml': '0e605495d5cbd33390d3f84dc0a9761f46503b7153f2407d7d28e26ee8ade1e3', 'lean-candidate/lean-toolchain': '55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea', 'lean-candidate/W03/ExtensionCounts.lean': '3e149b241fd05625d31f8510320248769f291fd566c4d519aee5bd18c206d470', 'lean-candidate/W03/FiniteExtension.lean': '74c60291f32189e9a2d7599e67d1c49a623acf9fde42a6115ad42f154b133413', 'lean-candidate/W03/FourVertexExtension.lean': '6c21281db6d0163705fe6e6a634a17f52cc4694a5cd136dfeb7766cfb8eede90', 'lean-candidate/W03/FourVertexExtensionConnected.lean': '4dd9e309ab1af8c3fb5ba36e14d9c4ef96f7f0764d0e16663f8d7fe9c7cb1d52'}
+          expected_names = ['W03.neighbors', 'W03.mem_neighbors', 'W03.vertexDegree', 'W03.vertexDegree_eq_degree', 'W03.core4', 'W03.extend4', 'W03.neighbors_inl_u', 'W03.neighbors_inl_v', 'W03.neighbors_inl_other', 'W03.extend4_degree_inl', 'W03.neighbors_inr_zero', 'W03.neighbors_inr_one', 'W03.neighbors_inr_two', 'W03.neighbors_inr_three', 'W03.extend4_degree_inr', 'W03.extend4_markedEdge', 'W03.extend4_reachable_uv', 'W03.extend4_reachable_of_adj', 'W03.extend4_reachable_old', 'W03.extend4_reachable_new', 'W03.extend4_connected', 'W03.extend4_bridge', 'W03.degreeMultiplicity', 'W03.extend4_degreeMultiplicity_split', 'W03.extend4_degreeMultiplicity', 'W03.extend4_maxDegree', 'W03.iso_vertexDegree', 'W03.iso_degreeMultiplicity', 'W03.extend4Fin', 'W03.extend4FinIso', 'W03.extend4Fin_degree', 'W03.extend4Fin_markedEdge', 'W03.extend4Fin_iterate']
           workflow = '.github/workflows/w03-four-vertex-extension.yml'
           assert not root.exists()
           run(['git', 'init', str(root)], 'init')
@@ -163,7 +163,7 @@ jobs:
           helper.write_text(text)
           assert sha(helper)=='646fed31a48d85ed75746ec09d06c23f5abdaca455518b6760b0dcb2b10c47c0'
           print('CACHE_HELPER_PATCH_SHA256', sha(helper), flush=True)
-          cache_roots=['Mathlib.Combinatorics.SimpleGraph.Finite', 'Mathlib.Data.Fintype.Sum', 'Mathlib.Tactic.FinCases', 'Mathlib.Combinatorics.SimpleGraph.Path']
+          cache_roots=['Mathlib.Combinatorics.SimpleGraph.Finite', 'Mathlib.Data.Fintype.Sum', 'Mathlib.Tactic.FinCases', 'Mathlib.Combinatorics.SimpleGraph.Path', 'Mathlib.Logic.Equiv.Fin.Basic']
           print('CACHE_ROOTS', json.dumps(cache_roots), flush=True)
           run([lake, 'exe', 'cache', 'get']+cache_roots, 'external-cache', cwd=project, seconds=900)
           print('TRUST: fixed external caches; no complete dependency source rebuild or independent kernel.', flush=True)
@@ -171,7 +171,7 @@ jobs:
           assert not fresh.exists()
           (fresh/'lib').mkdir(parents=True)
           libraries=[fresh/'lib']
-          own=['W03.FourVertexExtension','W03.FourVertexExtensionConnected']
+          own=['W03.FourVertexExtension','W03.FourVertexExtensionConnected','W03.ExtensionCounts','W03.FiniteExtension']
           for p in packages:
               target=project/'.lake/packages'/p['name']
               status=run(['git','-C',str(target),'status','--porcelain=v1','--untracked-files=no'],p['name']+'-status').strip()
@@ -191,7 +191,9 @@ jobs:
               assert sha(source)==expected['lean-candidate/'+source.relative_to(project).as_posix()]
               imports=run([lean,'--deps',str(source)],name+'-imports',cwd=project,seconds=60)
               deps=[pathlib.Path(s.strip()).resolve() for s in imports.splitlines() if s.strip()]
-              if name==own[1]: assert deps.count((fresh/'lib/W03/FourVertexExtension.olean').resolve())==1
+              expected_own_imports={own[0]:[],own[1]:[own[0]],own[2]:[own[0]],own[3]:[own[2],own[1]]}
+              for dependency in expected_own_imports[name]:
+                  assert deps.count((fresh/'lib'/(dependency.replace('.','/')+'.olean')).resolve())==1
               for dep in deps:
                   assert any(dep.is_relative_to(lib.resolve()) for lib in libraries+[builtins]),dep
                   print('ACTUAL_IMPORT_SHA256',name,str(dep),sha(dep),flush=True)
@@ -212,5 +214,5 @@ jobs:
           print('ALL_DECLARATION_AXIOMS',json.dumps(observed,sort_keys=True),flush=True)
           for path,digest in expected.items(): assert sha(root/path)==digest,path
           run(['git','-C',str(root),'diff','--exit-code','HEAD'],'final-source-integrity')
-          print('PASS: the two-module four-vertex extension bridge compiled with fresh project outputs. This is not the complete extremal graph theorem.',flush=True)
+          print('PASS: the multiplicity and finite-relabeling extension bridge compiled with four fresh project modules. This is not the complete extremal graph theorem.',flush=True)
           PY
