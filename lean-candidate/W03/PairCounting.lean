@@ -1,5 +1,6 @@
 import W03.ExtensionCounts
 import Mathlib.Combinatorics.SimpleGraph.Path
+import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 
@@ -92,8 +93,13 @@ theorem ordered_degree_sum_eq_twice_quadratic {V : Type*} [Fintype V]
     (hsym : ∀ d e, w d e = w e d) (hdiag : ∀ d, w d d = 0) :
     (∑ x, ∑ y, w (vertexDegree G x) (vertexDegree G y)) =
       2 * pairQuadratic G w := by
-  rw [sum_degree_classes G hpos hmax]
-  simp only [sum_degree_classes G hpos hmax, hdiag,
+  rw [sum_degree_classes G hpos hmax
+    (fun d => ∑ y, w d (vertexDegree G y)),
+    sum_degree_classes G hpos hmax (w 1),
+    sum_degree_classes G hpos hmax (w 2),
+    sum_degree_classes G hpos hmax (w 3),
+    sum_degree_classes G hpos hmax (w 4)]
+  simp only [hdiag,
     hsym 2 1, hsym 3 1, hsym 4 1, hsym 3 2, hsym 4 2, hsym 4 3]
   unfold pairQuadratic
   ring
