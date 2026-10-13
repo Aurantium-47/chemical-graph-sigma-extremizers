@@ -30,8 +30,15 @@ theorem totalIndex_eq_indexQuadratic {n : ℕ} (hn : 7 ≤ n)
   have hexp : (1 / (n : ℝ)) ≠ 0 := one_div_ne_zero hn0
   have hw := chemical_unordered_degree_sum hn G hc hmax
     (fun d e => Real.rpow (|(d : ℝ) - (e : ℝ)|) (1 / (n : ℝ)))
-    (by intro d e; rw [abs_sub_comm])
-    (by intro d; simp [Real.zero_rpow hexp])
+    (by
+      intro d e
+      exact congrArg (fun t : ℝ => Real.rpow t (1 / (n : ℝ)))
+        (abs_sub_comm (d : ℝ) (e : ℝ)))
+    (by
+      intro d
+      change Real.rpow (|(d : ℝ) - (d : ℝ)|) (1 / (n : ℝ)) = 0
+      rw [sub_self, abs_zero]
+      exact Real.zero_rpow hexp)
   change totalIndex G = _ at hw
   rw [hw]
   unfold pairQuadratic indexQuadratic
