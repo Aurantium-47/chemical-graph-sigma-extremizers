@@ -16,8 +16,9 @@ def oddCandidate (n : ℕ) : ℤ := 2 * ((n / 4 : ℕ) : ℤ) + 1
 
 theorem nat_int_cast_quarter (n : ℕ) :
     (((n : ℤ) / 4 : ℤ) : ℝ) = ((n / 4 : ℕ) : ℝ) := by
-  rw [← Int.natCast_ediv n 4]
-  exact Int.cast_natCast _
+  have hi : (n : ℤ) / 4 = ((n / 4 : ℕ) : ℤ) := by omega
+  have h := congrArg (fun z : ℤ => (z : ℝ)) hi
+  simpa only [Int.cast_natCast] using h
 
 theorem parabolaCenter_identity {n : ℕ} (hn : 2 ≤ n) :
     2 * powerD n * parabolaCenter n = 2 * (n : ℝ) * powerT n := by
