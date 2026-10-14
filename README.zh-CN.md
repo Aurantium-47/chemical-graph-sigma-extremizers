@@ -1,5 +1,7 @@
 # 化学图极值度数分布
 
+新增 [Lean 形式化补充](FORMALIZATION.md)：对每个 `n ≥ 7`，原真实图达到全无序不同顶点对、`f(n)=1/n` 指标的最大值，当且仅当其四重数属于原表；每个表向量都有实际取等图，`n ≡ 2 (mod 4)` 的两种向量都保留。[实际主定理完整类型](formalization/MAIN_THEOREM_TYPE.txt)和[执行摘要](formalization/RUN_38504445354.json)绑定固定数学提交，未把有限检查当作无穷命题的证明。
+
 本稿给出 Knor、Škrekovski、Filipovski、Dimitrov 的 *Extremizing antiregular graphs by modifying total σ-irregularity* 中 **Conjecture 10** 的证明。原文见 [arXiv:2411.01530v1](https://arxiv.org/abs/2411.01530v1)。
 
 研究对象是顶点数 `n ≥ 7`、最大度不超过 4 的连通简单图。对所有互不相同的无序顶点对，累加两个顶点度数之差绝对值的 `1/n` 次幂。注意：求和遍历所有顶点对，并非只计算有边相连的顶点。
@@ -12,4 +14,4 @@
 - [英文说明与运行方式](README.md)：执行 `python verify.py` 可复现整数区间检查及显式图构造，仅需 Python 标准库。
 - 后续文献 [Dimitrov 等，2026](https://doi.org/10.47443/dml.2026.041) 报告了 `n ≡ 0 (mod 4)` 子情形；本稿的四类证明不依赖其更广的参数结论。不声称已完成穷尽性学术优先权调查。
 
-本研究在 AI 辅助下完成。当前版本提供完整数学论证和可复现有限检查，尚不声称完成证明助手形式化验证或外部同行评审。参见 [AI_USAGE.md](AI_USAGE.md)。
+原 v0.1.1 的数学稿、代码、数据及 [AI 使用说明](AI_USAGE.md)保持历史原貌，其中“尚未形式化”的表述描述当时版本。后续形式化覆盖上述完整 Conjecture 10，不覆盖 Conjecture 11，不分类图同构类型。实际运行新编译 19 个项目模块，打印 171 个完整声明类型及传递公理列表，108 条受限命令全部退出零；仅使用标准三公理，保留 5 条非数学样式警告。外部缓存受信；原 workflow 对 mathlib 缓存助手有两处防删除补丁，数学库源码及版本未改，不能称整个依赖树逐字未改。未做全依赖源码重建或独立内核检查。后补元数据已确认同一 run 的唯一 job 及三个 step 均 completed/success，响应未给完成时间，仍记 null。详见[复现说明](REPRODUCIBILITY.md)。本研究在 AI 辅助下完成，不声称外部人类同行评审或全球优先权。

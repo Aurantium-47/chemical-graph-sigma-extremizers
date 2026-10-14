@@ -1,5 +1,7 @@
 # Extremal degree multiplicities of chemical graphs
 
+The [Lean supplement](FORMALIZATION.md) proves the full Conjecture 10 statement for every `n ≥ 7`: a graph maximizes the original all-pairs `1/n` objective if and only if its degree multiplicities appear in the table, and every listed vector is attained. Both `n ≡ 2 (mod 4)` vectors are included. The checked mathematical source and actual execution record are fixed separately from this documentation update.
+
 A proof of the classification in **Conjecture 10** of Knor, Škrekovski, Filipovski and Dimitrov, *Extremizing antiregular graphs by modifying total σ-irregularity* ([arXiv:2411.01530v1](https://arxiv.org/abs/2411.01530v1); [published article](https://doi.org/10.1016/j.amc.2024.129199)).
 
 For every connected simple graph with `n ≥ 7` vertices and maximum degree at most four, consider the sum of `|degree(u) − degree(v)|^(1/n)` over **all unordered pairs of distinct vertices**. The manuscript determines exactly which degree multiplicities maximize this quantity:
@@ -18,7 +20,9 @@ The result classifies degree multiplicities, not individual graph isomorphism ty
 - [Manuscript PDF](main.pdf)
 - [LaTeX source](main.tex)
 - [中文简述](README.zh-CN.md)
-- [AI assistance and verification status](AI_USAGE.md)
+- [Lean formalization, actual theorem, and execution boundaries](FORMALIZATION.md)
+- [Reproducibility and distribution integrity](REPRODUCIBILITY.md)
+- [Historical AI assistance statement](AI_USAGE.md)
 
 [Dimitrov et al., Discrete Mathematics Letters 18 (2026), 1–7](https://doi.org/10.47443/dml.2026.041) reported the `n ≡ 0 (mod 4)` case. The proof here treats all four residue classes independently of that article's more general parameter statement. This repository does not assert that an exhaustive priority search has been completed.
 
@@ -46,4 +50,4 @@ The source is a standalone LaTeX article with its bibliography included. With a 
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-This version includes a complete mathematical argument and reproducible finite checks. Proof-assistant verification and external peer review are not claimed. Research was completed with AI assistance; see [AI_USAGE.md](AI_USAGE.md).
+The v0.1.1 manuscript, code, data, and AI usage statement are preserved as historical artifacts. Their earlier statements about the absence of proof-assistant verification describe that release. The later [Lean supplement](FORMALIZATION.md) records the full Conjecture 10 formalization and its execution limits; it does not cover Conjecture 11 or classify graph isomorphism types. No external human peer-review claim is made. Research was completed with AI assistance.

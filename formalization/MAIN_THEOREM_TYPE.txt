@@ -1,0 +1,11 @@
+W03.chemical_conjecture10 : ∀ (n : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat 7 (instOfNatNat 7)) n →
+    And
+      (∀ (G : SimpleGraph.{0} (Fin n)),
+        @W03.Chemical n G → Iff (@W03.Maximizes n G) (W03.WinnerProfile n (@W03.graphProfile n G)))
+      (∀ (p : Fin (@OfNat.ofNat.{0} Nat 4 (instOfNatNat 4)) → Nat),
+        W03.WinnerProfile n p →
+          @Exists.{1} (SimpleGraph.{0} (Fin n)) fun (G : SimpleGraph.{0} (Fin n)) =>
+            And (@W03.Chemical n G)
+              (And (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat 4 (instOfNatNat 4)) → Nat) (@W03.graphProfile n G) p)
+                (And (@Eq.{1} Real (@W03.totalIndex n G) (W03.extremalValue n)) (@W03.Maximizes n G))))

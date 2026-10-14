@@ -1,0 +1,245 @@
+{
+  "source_commit": "a74251313cc2afd21efa3e17257c64bbafd019c7",
+  "source_tree": "081e80e7fd18e575cd1d156c629ebb8029d4370e",
+  "workflow_path": ".github/workflows/w03-four-vertex-extension.yml",
+  "workflow_sha256": "6e3f0989ee8f0c0bc741a2602ed6b30c10b4df3f9da3ba1bbeaf0685562197bf",
+  "run_url": "https://github.com/Aurantium-47/chemical-graph-sigma-extremizers/actions/runs/38504445354",
+  "run_id": 38504445354,
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "run_attempt": 1,
+  "event": "push",
+  "job_id": 115658595824,
+  "job_metadata_snapshot_status": "in_progress",
+  "job_metadata_snapshot_conclusion": null,
+  "job_metadata_snapshot_started_at": "2026-10-14T03:05:36Z",
+  "job_final_conclusion_separately_observed": "success",
+  "job_completed_at_separately_observed": null,
+  "terminal_step_metadata_observed": true,
+  "complete_job_log_obtained": true,
+  "complete_job_log_sha256": "d1d8364bb1d48e8089d5306b0907f12c4085f134cc7e6e4c83591be1b0f651d8",
+  "project_modules": 19,
+  "all_project_modules_freshly_compiled": true,
+  "all_project_imports_bound_to_fresh_artifacts": true,
+  "complete_declaration_types_and_transitive_axiom_lists": 171,
+  "axiom_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "main_theorem": "W03.chemical_conjecture10",
+  "main_theorem_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axiom_histogram": {
+    "propext,Classical.choice,Quot.sound": 155,
+    "none": 8,
+    "propext,Quot.sound": 8
+  },
+  "sorryAx_custom_axioms_or_native_evaluation_trust_used": false,
+  "resource_supervised_commands": 108,
+  "all_exit_codes_zero": true,
+  "all_abort_reasons_null": true,
+  "final_integrity_and_declaration_assertions_passed": true,
+  "nonblocking_warning_count": 5,
+  "warnings": {
+    "source": "lean-candidate/W03/FinalCoordinates.lean",
+    "lines": [
+      149,
+      155,
+      162,
+      166,
+      172
+    ],
+    "kind": "tactic style: tac1 <;> tac2 can be written as tac1; tac2"
+  },
+  "peak_sampled_process_group_rss_bytes": 2211102720,
+  "peak_sampled_process_group_swap_bytes": 0,
+  "sum_guarded_child_command_seconds": 134.16334098700005,
+  "sum_is_end_to_end_wall_clock_time": false,
+  "lean": "4.19.0",
+  "mathlib": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "manifest_pinned_packages": 9,
+  "external_cache_roots": 12,
+  "runner": "ubuntu-24.04",
+  "lean_threads": 1,
+  "Elab.async": false,
+  "external_precompiled_caches_used": true,
+  "full_external_dependency_source_rebuild": false,
+  "independent_kernel_implementation_check": false,
+  "documentation_update_rebuilt": false,
+  "scope": "Conjecture 10, all n >= 7, actual connected simple graphs of maximum degree at most 4, all unordered distinct vertex pairs, real-power exponent f(n)=1/n; maximizes iff table profile and every table profile attained.",
+  "both_residue_two_profiles_included": true,
+  "excluded_scope": [
+    "Conjecture 11",
+    "other f(n)",
+    "graph isomorphism classification"
+  ],
+  "main_type_sha256": "37d64097220465aeb10b595d889b9f54f956c528323dc524dfde647102fefb9d",
+  "modules": [
+    {
+      "module": "W03.FourVertexExtension",
+      "source_sha256": "6c21281db6d0163705fe6e6a634a17f52cc4694a5cd136dfeb7766cfb8eede90",
+      "olean_sha256": "3b7fe21aab6f1245caa43230e78da620451ec15f83976e444fdd3cca6b0c9dd9"
+    },
+    {
+      "module": "W03.FourVertexExtensionConnected",
+      "source_sha256": "4dd9e309ab1af8c3fb5ba36e14d9c4ef96f7f0764d0e16663f8d7fe9c7cb1d52",
+      "olean_sha256": "3451bdc1113a042296967f6fb1681f0bc6598792e54a094c6902c617f3084fe0"
+    },
+    {
+      "module": "W03.ExtensionCounts",
+      "source_sha256": "3e149b241fd05625d31f8510320248769f291fd566c4d519aee5bd18c206d470",
+      "olean_sha256": "a4b751a5c3b38d2804f82432d9908f353660348b2f8eafeb7698993d6b54fe3d"
+    },
+    {
+      "module": "W03.FiniteExtension",
+      "source_sha256": "74c60291f32189e9a2d7599e67d1c49a623acf9fde42a6115ad42f154b133413",
+      "olean_sha256": "4435500baaba1751cb5e1a65b56e1daa3fc41ed9ba38fdcb8425d0ce825218a3"
+    },
+    {
+      "module": "W03.BaseGraphs",
+      "source_sha256": "c1c079f0b3c43f0dd5264cf0f3c217c9a6296e7bb1192f14b18bf26d67d25d76",
+      "olean_sha256": "f121abe20553027dcb626f5552209bb8462e6d7c4d23b89ed466b301a4081427"
+    },
+    {
+      "module": "W03.BaseCertificates",
+      "source_sha256": "f93d1afd130cacf011992907ba458f773899c8379f2df5039fc23aac1b169f26",
+      "olean_sha256": "955fa57d46a8f21cf53632d4b877db92fe57d991af924d3595927c6b2fc0a49d"
+    },
+    {
+      "module": "W03.RealizationIteration",
+      "source_sha256": "8ad6262bcf8b0d5c06757c85c4515e5ecd63f7591f769f3c96c61552f0591fb2",
+      "olean_sha256": "323b151f79f390d1960de5bdfbff603cb6f289b9d39c24bcfd836f4ad6208251"
+    },
+    {
+      "module": "W03.WinnerRealization",
+      "source_sha256": "f59f202b0a73b180ec9fda8ac52c8e66a70d3604d26bad5365fccab65f1b7bb1",
+      "olean_sha256": "495b7e7cad2bd244ad7345f82884f81f2af559e399bab360c7938ca2d4f6458f"
+    },
+    {
+      "module": "W03.PairCounting",
+      "source_sha256": "aef5b90f561e50388c67cfb1aca50025518a331cb4c2b92493d014e70de05ba0",
+      "olean_sha256": "63fcfaf5624d33eb662a81d7270c3d95fc1c2f6c4e8dccdb95504d8a422c0040"
+    },
+    {
+      "module": "W03.TotalIndex",
+      "source_sha256": "a45bf06251ab60c6382ee20a3a7ba82ef2498f4216f0c1d703ba15c084513823",
+      "olean_sha256": "5a44eb71eed589405a2bfd02f65a9201043f5ad7d7fbb94068e1becfe495c1bd"
+    },
+    {
+      "module": "W03.ProfileConstraints",
+      "source_sha256": "66c140f274be05cbad27c840fdc920d8aa11bb0792dfa72792180825b83a7d12",
+      "olean_sha256": "b9ed29c04c4097c2f976b5a371532ab7653e9c1482da0d67d4c49619e16ad5fe"
+    },
+    {
+      "module": "W03.IndexDecomposition",
+      "source_sha256": "d35f70167dc11bd631abf57ea12ae4a557166fb0a7cd6ccee696f148e4f3443d",
+      "olean_sha256": "42293c9b59ae1219c09469e8cee8bc15eb0f2fa93a9376dac2ffe59e086497f5"
+    },
+    {
+      "module": "W03.PowerBounds",
+      "source_sha256": "2d36442742503699abc768b676e5e6d951a3c17fe81c89f32a93dc1e443d5c45",
+      "olean_sha256": "dd8412a7c891dabb31ae0318f63020eff15f6fea895c475336f9a60f2858d08d"
+    },
+    {
+      "module": "W03.PenaltyComparison",
+      "source_sha256": "68ce4fad34901fe101af862bbe9e7e5a9f6e95446c46804efa72a97e21975b05",
+      "olean_sha256": "de5201de57bb45ce550173d314629199c50e98ed11d24c5dcebfa08d674e2e9d"
+    },
+    {
+      "module": "W03.ParityPenalty",
+      "source_sha256": "caa73a8b3469e33579bb199cf1af2632c63624f5dc7a5f3d472afe58801caa93",
+      "olean_sha256": "28e331d2ce5f2ed67f558ef6b2a38d72b47cc2f2468bb31e96fb65472f50a020"
+    },
+    {
+      "module": "W03.ParityParabola",
+      "source_sha256": "e4f488a3adc344f3d4a9c13ba02b191c528775505bd85075c2f6288f03ca6e5d",
+      "olean_sha256": "1051c8e318faf2443caab2c6c7ac1c7d8436c0167fea161a79aaefdd1b1b20a0"
+    },
+    {
+      "module": "W03.ParityComparison",
+      "source_sha256": "cf1f7836203d9a1abfe05c9798529952a3b9b320d5982ca3664611cedd56ecbf",
+      "olean_sha256": "90ba22e3ecd0ae8357439bcdeecf300b0fe266b2e225fd2ace51e8bc2f1b8fbf"
+    },
+    {
+      "module": "W03.FinalCoordinates",
+      "source_sha256": "0aa5775b3a859a769418398c82a8131c606325ec979590ec7efdfda971486b04",
+      "olean_sha256": "2e70026b47705c6d68d8f201f64ba36a9b68bf63b36e70e8d3791f7e395c1fa4"
+    },
+    {
+      "module": "W03.Conjecture10",
+      "source_sha256": "26317f8c46f5dd2fca85c017fcd96464542650779e7a2a0c3c8f47f022f686ca",
+      "olean_sha256": "735c8f9db0ec8ee67a596a72867a9a9217f028db13d1e6177098cbde5c5ecf4c"
+    }
+  ],
+  "checked_source_and_configuration_sha256": {
+    ".github/workflows/w03-four-vertex-extension.yml": "6e3f0989ee8f0c0bc741a2602ed6b30c10b4df3f9da3ba1bbeaf0685562197bf",
+    "lean-candidate/W03/BaseCertificates.lean": "f93d1afd130cacf011992907ba458f773899c8379f2df5039fc23aac1b169f26",
+    "lean-candidate/W03/BaseGraphs.lean": "c1c079f0b3c43f0dd5264cf0f3c217c9a6296e7bb1192f14b18bf26d67d25d76",
+    "lean-candidate/W03/Conjecture10.lean": "26317f8c46f5dd2fca85c017fcd96464542650779e7a2a0c3c8f47f022f686ca",
+    "lean-candidate/W03/ExtensionCounts.lean": "3e149b241fd05625d31f8510320248769f291fd566c4d519aee5bd18c206d470",
+    "lean-candidate/W03/FinalCoordinates.lean": "0aa5775b3a859a769418398c82a8131c606325ec979590ec7efdfda971486b04",
+    "lean-candidate/W03/FiniteExtension.lean": "74c60291f32189e9a2d7599e67d1c49a623acf9fde42a6115ad42f154b133413",
+    "lean-candidate/W03/FourVertexExtension.lean": "6c21281db6d0163705fe6e6a634a17f52cc4694a5cd136dfeb7766cfb8eede90",
+    "lean-candidate/W03/FourVertexExtensionConnected.lean": "4dd9e309ab1af8c3fb5ba36e14d9c4ef96f7f0764d0e16663f8d7fe9c7cb1d52",
+    "lean-candidate/W03/IndexDecomposition.lean": "d35f70167dc11bd631abf57ea12ae4a557166fb0a7cd6ccee696f148e4f3443d",
+    "lean-candidate/W03/PairCounting.lean": "aef5b90f561e50388c67cfb1aca50025518a331cb4c2b92493d014e70de05ba0",
+    "lean-candidate/W03/ParityComparison.lean": "cf1f7836203d9a1abfe05c9798529952a3b9b320d5982ca3664611cedd56ecbf",
+    "lean-candidate/W03/ParityParabola.lean": "e4f488a3adc344f3d4a9c13ba02b191c528775505bd85075c2f6288f03ca6e5d",
+    "lean-candidate/W03/ParityPenalty.lean": "caa73a8b3469e33579bb199cf1af2632c63624f5dc7a5f3d472afe58801caa93",
+    "lean-candidate/W03/PenaltyComparison.lean": "68ce4fad34901fe101af862bbe9e7e5a9f6e95446c46804efa72a97e21975b05",
+    "lean-candidate/W03/PowerBounds.lean": "2d36442742503699abc768b676e5e6d951a3c17fe81c89f32a93dc1e443d5c45",
+    "lean-candidate/W03/ProfileConstraints.lean": "66c140f274be05cbad27c840fdc920d8aa11bb0792dfa72792180825b83a7d12",
+    "lean-candidate/W03/RealizationIteration.lean": "8ad6262bcf8b0d5c06757c85c4515e5ecd63f7591f769f3c96c61552f0591fb2",
+    "lean-candidate/W03/TotalIndex.lean": "a45bf06251ab60c6382ee20a3a7ba82ef2498f4216f0c1d703ba15c084513823",
+    "lean-candidate/W03/WinnerRealization.lean": "f59f202b0a73b180ec9fda8ac52c8e66a70d3604d26bad5365fccab65f1b7bb1",
+    "lean-candidate/lake-manifest.json": "7d63750392d2e1501fdc587db7dfe7c4a6a59ce68d83b492feb340863f309269",
+    "lean-candidate/lakefile.toml": "0e605495d5cbd33390d3f84dc0a9761f46503b7153f2407d7d28e26ee8ade1e3",
+    "lean-candidate/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "job_final_status_separately_observed": "completed",
+  "terminal_steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Check the fixed candidate, compile nineteen modules, and inspect declarations",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    }
+  ],
+  "terminal_metadata_retrieved_after_original_log": true,
+  "terminal_metadata_is_new_execution": false,
+  "terminal_metadata_response_sha256": "f37980f21c08c451bcf057206eec30da3732d2da1e371aa5dfe0adaa6fb8bd5f",
+  "mathlib_cache_helper_modification": {
+    "path": "Cache/Requests.lean",
+    "replacements": [
+      {
+        "old": "IO.FS.removeDirAll (buildDir / \"lib\")",
+        "new": "pure ()"
+      },
+      {
+        "old": "IO.FS.removeDirAll (buildDir / \"ir\")",
+        "new": "pure ()"
+      }
+    ],
+    "purpose": "Preserve downloaded build directories",
+    "patched_sha256": "646fed31a48d85ed75746ec09d06c23f5abdaca455518b6760b0dcb2b10c47c0",
+    "part_of_original_checked_workflow": true,
+    "mathematical_library_sources_changed": false,
+    "entire_dependency_checkout_unmodified": false
+  }
+}
