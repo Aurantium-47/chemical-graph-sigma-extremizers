@@ -40,6 +40,7 @@ theorem parity_comparison_zero {n : ℕ} (hn : 7 ≤ n) (hnr : n % 4 = 0) :
     simp only [parityUpper, parityPenaltyFloor, hp.1, hp.2]
     norm_num [evenPenaltyBound, oddPenaltyBound, evenCandidate, oddCandidate,
       indexParabola, hnr, powerD]
+    simp only [nat_int_cast_quarter]
     rw [hreal]
     ring
   refine ⟨he, ?_⟩
@@ -63,6 +64,7 @@ theorem parity_comparison_one {n : ℕ} (hn : 7 ≤ n) (hnr : n % 4 = 1) :
     simp only [parityUpper, parityPenaltyFloor, hp.1, hp.2]
     norm_num [evenPenaltyBound, oddPenaltyBound, evenCandidate, oddCandidate,
       indexParabola, hnr, powerD]
+    simp only [nat_int_cast_quarter]
     rw [hreal]
     ring
   refine ⟨he, ?_⟩
@@ -86,6 +88,7 @@ theorem parity_comparison_two {n : ℕ} (hn : 7 ≤ n) (hnr : n % 4 = 2) :
     simp only [parityUpper, parityPenaltyFloor, hp.1, hp.2]
     norm_num [evenPenaltyBound, oddPenaltyBound, evenCandidate, oddCandidate,
       indexParabola, hnr, powerD]
+    simp only [nat_int_cast_quarter]
     rw [hreal]
     ring
   refine ⟨he, ?_⟩
@@ -110,6 +113,7 @@ theorem parity_comparison_three {n : ℕ} (hn : 7 ≤ n) (hnr : n % 4 = 3) :
     simp only [parityUpper, parityPenaltyFloor, hp.1, hp.2]
     norm_num [evenPenaltyBound, oddPenaltyBound, evenCandidate, oddCandidate,
       indexParabola, hnr, powerD]
+    simp only [nat_int_cast_quarter]
     rw [hreal]
     ring
   refine ⟨he, ?_⟩

@@ -14,6 +14,11 @@ def evenCandidate (n : ℕ) : ℤ :=
 
 def oddCandidate (n : ℕ) : ℤ := 2 * ((n / 4 : ℕ) : ℤ) + 1
 
+theorem nat_int_cast_quarter (n : ℕ) :
+    (((n : ℤ) / 4 : ℤ) : ℝ) = ((n / 4 : ℕ) : ℝ) := by
+  rw [← Int.natCast_ediv n 4]
+  exact Int.cast_natCast _
+
 theorem parabolaCenter_identity {n : ℕ} (hn : 2 ≤ n) :
     2 * powerD n * parabolaCenter n = 2 * (n : ℝ) * powerT n := by
   have hd := powerD_gt_two hn
@@ -93,6 +98,7 @@ theorem candidate_center_windows {n : ℕ} (hn : 2 ≤ n) :
   rcases hcases with h | h | h | h
   all_goals
     norm_num [evenCandidate, oddCandidate, parabolaCenter, h] at hreal ⊢
+    simp only [nat_int_cast_quarter]
     constructor <;> constructor <;> linarith [hd.1, hd.2]
 
 theorem candidate_interior_bounds {n : ℕ} (hn : 7 ≤ n) :
@@ -133,6 +139,8 @@ set_option pp.all true
 #print W03.oddCandidate
 #check @W03.oddCandidate
 #print axioms W03.oddCandidate
+#check @W03.nat_int_cast_quarter
+#print axioms W03.nat_int_cast_quarter
 #check @W03.parabolaCenter_identity
 #print axioms W03.parabolaCenter_identity
 #check @W03.indexParabola_gap
